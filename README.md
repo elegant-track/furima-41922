@@ -5,13 +5,13 @@
 | column             | Type       | Options      |
 | ------------------ | ---------- | ------------ |
 | nickname           | string     | null: false  |
-| email              | string     | nill: false, unique: true |
-| encrypted_password | string     | nill: false  |
-| last_name          | string     | nill: false  |
-| first_name         | string     | nill: false  |
-| last_name_kana     | string     | nill: false  |
-| first_name_kana    | string     | nill: false  |
-| birthday           | date       | nill: false  |
+| email              | string     | null: false, unique: true |
+| encrypted_password | string     | null: false  |
+| last_name          | string     | null: false  |
+| first_name         | string     | null: false  |
+| last_name_kana     | string     | null: false  |
+| first_name_kana    | string     | null: false  |
+| birthday           | date       | null: false  |
 
 ### Association
 - has_many :items
@@ -21,15 +21,15 @@
 
 | column           | Type       | Options     |
 | ---------------- | ---------- | ----------- |
-| name             | string     | nill: false |
-| explanation      | text       | nill: false |
-| category_id      | integer    | nill: false |
-| status_id        | integer    | nill: false |
-| shopping_fee_id  | integer    | nill: false |
-| prefecture_id    | integer    | nill: false |
-| delivery_time_id | string     | nill: false |
-| price            | integer    | nill: false |
-| user             | references | nill: false, foreign_key: true|
+| name             | string     | null: false |
+| explanation      | text       | null: false |
+| category_id      | integer    | null: false |
+| status_id        | integer    | null: false |
+| shopping_fee_id  | integer    | null: false |
+| prefecture_id    | integer    | null: false |
+| delivery_time_id | string     | null: false |
+| price            | integer    | null: false |
+| user             | references | null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -39,8 +39,8 @@
 
 | column | Type       | Options    |
 | ------ | ---------- | ---------- |
-| user   | references | nill: false, foreign_key: true |
-| item   | references | nill: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -51,13 +51,13 @@
 
 | column         | Type       | Options     |
 | -------------- | ---------- | ----------- |
-| post_code      | string     | nill: false |
-| prefecture_id | integer    | nill: false |
-| municipality   | string     | nill: false |
-| address        | string     | nill: false |
+| post_code      | string     | null: false |
+| prefecture_id  | integer    | null: false |
+| municipality   | string     | null: false |
+| address        | string     | null: false |
 | building_name  | string     |             |
-| phone_number   | string     | nill: false |
-| purchase       | references | nill: false, foreign_key: true |
+| phone_number   | string     | null: false |
+| purchase       | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :purchase
