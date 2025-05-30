@@ -19,17 +19,17 @@
 
 ## Items
 
-| column        | Type       | Options     |
-| ------------- | ---------- | ----------- |
-| name          | string     | nill: false |
-| explanation   | text       | nill: false |
-| category      | string     | nill: false |
-| status        | string     | nill: false |
-| shopping_fee  | string     | nill: false |
-| prefecture_id | integer    | nill: false |
-| delivery_time | string     | nill: false |
-| price         | integer    | nill: false |
-| user          | references | nill: false, foreign_key: true|
+| column           | Type       | Options     |
+| ---------------- | ---------- | ----------- |
+| name             | string     | nill: false |
+| explanation      | text       | nill: false |
+| category_id      | integer    | nill: false |
+| status_id        | integer    | nill: false |
+| shopping_fee_id  | integer    | nill: false |
+| prefecture_id    | integer    | nill: false |
+| delivery_time_id | string     | nill: false |
+| price            | integer    | nill: false |
+| user             | references | nill: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -52,8 +52,8 @@
 | column         | Type       | Options     |
 | -------------- | ---------- | ----------- |
 | post_code      | string     | nill: false |
-| prefectures_id | integer    | nill: false |
-| municipalities | string     | nill: false |
+| prefecture_id | integer    | nill: false |
+| municipality   | string     | nill: false |
 | address        | string     | nill: false |
 | building_name  | string     |             |
 | phone_number   | string     | nill: false |
