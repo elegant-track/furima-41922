@@ -18,5 +18,10 @@ class User < ApplicationRecord
   end
   
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください', allow_nil: true
+  FULL_WIDTH_REGEX = /[^\x20-\x7E]/.freeze
+
+  validates :password, format: { with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください' }
+  validates :password, format: { without: FULL_WIDTH_REGEX, message: 'には半角英数字を使用してください' }
+
+
 end
