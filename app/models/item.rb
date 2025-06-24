@@ -13,6 +13,11 @@ class Item < ApplicationRecord
     validates :explanation
     validates :price
     validates :image
+    validates :category_id
+    validates :status_id
+    validates :shopping_fee_id
+    validates :prefecture_id
+    validates :delivery_time_id
   end
 
   with_options numericality: { other_than: 1, message: "can't be blank" } do
