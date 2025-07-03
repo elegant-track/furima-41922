@@ -15,6 +15,8 @@ RSpec.describe OrderAddress, type: :model do
       end
 
       it 'building_nameは空でも購入できる' do
+        @order_address.building_name = ''
+        @order_address.valid?
         expect(@order_address).to be_valid
       end
     end
@@ -84,6 +86,12 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.item_id = nil
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Item can't be blank")
+      end
+
+      it 'phone_numberが9桁以下では購入できない' do
+        @order_address.phone_number = '09012345'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Phone number is invalid. Input only number")
       end
     end
   end

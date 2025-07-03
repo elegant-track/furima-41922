@@ -33,16 +33,7 @@
     <%# /支払額の表示 %>
 
     <%= form_with model: @order_address, url: item_orders_path(@item), id: 'charge-form', class: 'transaction-form-wrap', data: { turbo: false } do |f| %>
-      <% if @order_address.errors.any? %>
-        <div class="error-messages">
-          <h2>以下のエラーがあります：</h2>
-          <ul>
-            <% @order_address.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+    <%= render 'shared/error_messages', model: f.object %>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
