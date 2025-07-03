@@ -14,13 +14,13 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address).to be_valid
       end
 
-      it 'building_name葉からでも購入できる' do
+      it 'building_nameは空でも購入できる' do
         expect(@order_address).to be_valid
       end
     end
 
     context '購入できない場合' do
-      it 'post_codeが体と購入できない' do
+      it 'post_codeが空だと購入できない' do
         @order_address.post_code = ''
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Post code can't be blank")
