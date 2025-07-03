@@ -13,11 +13,11 @@
         <%= image_tag "item-sample.png", class: "item-box-img" %>
       <% end %>
 
-      <%# if @item.purchase.present? %>
-        <%#<div class="sold-out">%>
-          <%#<span>Sold Out!!</span>%>
-        <%#</div>%>
-      <%# end %>
+      <% if @item.purchase.present? %>
+        <div class="sold-out">
+          <span>Sold Out!!</span>
+        </div>
+      <% end %>
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -34,9 +34,9 @@
         <p class="or-text">or</p>
         <%= link_to "削除", item_path(@item), data: {turbo_method: :delete}, class:"item-destroy" %>
       <% else %>
-        <%# unless @item.purchase.present? %>
-          <%= link_to "購入画面に進む", "#" ,class:"item-red-btn"%>
-        <%# end %>
+        <% unless @item.purchase.present? %>
+          <%= link_to "購入画面に進む", item_orders_path(@item), data: { turbo: false } ,class:"item-red-btn"%>
+        <% end %>
       <% end %>
     <% end %>
 
